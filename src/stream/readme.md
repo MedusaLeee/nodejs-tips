@@ -15,4 +15,4 @@
 
 注意：Stream.Readable是抽象类，子类要实现_read的方法
 
-读取json文件实例:
+[读取json文件实例](https://github.com/MedusaLeee/nodejs-tips/blob/master/src/stream/parseJsonFile.js)
