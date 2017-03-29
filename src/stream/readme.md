@@ -41,3 +41,29 @@
 
 * [读取json文件实例](https://github.com/MedusaLeee/nodejs-tips/blob/master/src/stream/parseJsonFile.js)
 * [流式消耗迭代器中的数据](https://github.com/MedusaLeee/nodejs-tips/blob/master/src/stream/iteratorReadable.js)
+
+### Writable 可写流
+
+## 详解
+
+注意：需要实现_write方法
+
+使用write写入时：
+
+* 上游通过调用writable.write(data)将数据写入可写流中。write()方法会调用_write()将data写入底层。
+* 在_write中，当数据成功写入底层后，必须调用callback(err)告诉流开始处理下一个数据。
+* callback的调用既可以是同步的，也可以是异步的。
+* 上游必须调用writable.end(data)来结束可写流，data是可选的。此后，不能再调用write新增数据。
+* 在end方法调用后，当所有底层的写操作均完成时，会触发finish事件。
+
+使用pipe管道连接：
+
+如：
+
+* process.stdin.pipe(new GreenStream());
+* cat src/stream/json.txt | node src/stream/greenWriteStream.js
+
+示例：
+
+* [简单流对象示例](https://github.com/MedusaLeee/nodejs-tips/blob/master/src/stream/simpleWriteStream.js)
+* [继承Writable实现示例](https://github.com/MedusaLeee/nodejs-tips/blob/master/src/stream/greenWriteStream.js)
