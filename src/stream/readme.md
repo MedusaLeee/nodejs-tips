@@ -44,7 +44,7 @@
 
 ### Writable 可写流
 
-## 详解
+#### 详解
 
 注意：需要实现_write方法
 
@@ -67,3 +67,14 @@
 
 * [简单流对象示例](https://github.com/MedusaLeee/nodejs-tips/blob/master/src/stream/simpleWriteStream.js)
 * [继承Writable实现示例](https://github.com/MedusaLeee/nodejs-tips/blob/master/src/stream/greenWriteStream.js)
+
+
+### Duplex 可读可写流
+
+* Duplex实际上就是继承了Readable和Writable的一类流。
+* 一个Duplex对象既可当成可读流来使用（需要实现_read方法），也可当成可写流来使用（需要实现_write方法）。
+* 因为它既可读又可写，所以称它有两端：可写端和可读端。可写端的接口与Writable一致，作为下游来使用；可读端的接口与Readable一致，作为上游来使用。
+
+示例：
+
+* * [简单流对象示例](https://github.com/MedusaLeee/nodejs-tips/blob/master/src/stream/simpleDuplex.js)
