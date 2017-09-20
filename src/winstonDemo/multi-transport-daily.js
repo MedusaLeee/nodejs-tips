@@ -31,7 +31,7 @@ const transportConsole = new winston.transports.Console({
     },
     formatter: myLogFormatter,
 });
-const transportFileDebug = new winston.transports.DailyRotateFile({
+const debugTransportFile = new winston.transports.DailyRotateFile({
     name: 'full',
     filename: __dirname + '/logs/debug.log',
     json: true,
@@ -40,7 +40,7 @@ const transportFileDebug = new winston.transports.DailyRotateFile({
     prepend: false,
 });
 
-const transportServiceFileDebug = new winston.transports.DailyRotateFile({
+const serviceTransportFile = new winston.transports.DailyRotateFile({
     name: 'service',
     filename: __dirname + '/logs/service.log',
     json: true,
@@ -49,7 +49,7 @@ const transportServiceFileDebug = new winston.transports.DailyRotateFile({
     prepend: false,
 });
 
-const transportDaoFileDebug = new winston.transports.DailyRotateFile({
+const daoTransportFile = new winston.transports.DailyRotateFile({
     name: 'dao',
     filename: __dirname + '/logs/dao.log',
     json: true,
@@ -61,23 +61,23 @@ const transportDaoFileDebug = new winston.transports.DailyRotateFile({
 winston.loggers.add('default', {
   transports: [
     transportConsole,
-    transportFileDebug
+    debugTransportFile
   ],
 });
 
 winston.loggers.add('service', {
     transports: [
         transportConsole,
-        transportServiceFileDebug,
-        transportFileDebug
+        serviceTransportFile,
+        debugTransportFile
     ],
 });
 
 winston.loggers.add('dao', {
     transports: [
         transportConsole,
-        transportDaoFileDebug,
-        transportFileDebug
+        daoTransportFile,
+        debugTransportFile
     ],
 });
 const defaultLog = winston.loggers.get('default');
