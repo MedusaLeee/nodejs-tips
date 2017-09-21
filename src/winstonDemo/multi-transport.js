@@ -1,3 +1,6 @@
+/*
+  多container及多transport组合
+ */
 const winston = require('winston');
 const moment = require('moment');
 

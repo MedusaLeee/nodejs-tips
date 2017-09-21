@@ -1,3 +1,6 @@
+/*
+  基本使用
+ */
 const winston = require('winston');
 
 const transportConsole = new winston.transports.Console({ json: false, timestamp: true, prettyPrint: true, colorize: true, level: 'debug' });
