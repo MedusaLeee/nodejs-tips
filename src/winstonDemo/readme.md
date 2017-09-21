@@ -236,7 +236,7 @@ getServiceLogger('userService').info('登录成功');
 	
 ## 更多功能
 
-我谢了几个demo，包括基本使用，多个输出源，捕获系统崩溃错误，按天生成日志文件。代码地址为：
+我写了几个demo，包括基本使用，多个输出源，捕获系统崩溃错误，按天生成日志文件。代码地址为：
 
 [**winstonDemo**](https://github.com/MedusaLeee/nodejs-tips/tree/master/src/winstonDemo)
 
