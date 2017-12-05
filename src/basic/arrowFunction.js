@@ -85,3 +85,18 @@ function foo() {
 }
 
 foo(1); // 1
+
+
+// 4. 不会被变量提升
+
+console.log(fun2());
+console.log(fun1());
+
+
+function fun1() {
+	return 1;
+}
+
+const fun2 = () => {
+	return 2;
+};
