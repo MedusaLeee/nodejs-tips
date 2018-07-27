@@ -9,3 +9,4 @@ Node.js学习及工作中的一些小技巧和小知识点的总结（持续更�
 5. [回调风格的函数与返回Promise函数相互转化](./src/callbackPromise)
 6. [手写Promise学习](./src/myPromise)
 7. [javascript继承机制研究](./src/extends)
+8. [Node.js v10+ Promise化API 尝鲜](./src/node10Promise)
