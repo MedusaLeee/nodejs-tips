@@ -13,7 +13,7 @@ class MusicPlayer extends events {
 const musicPlayer = new MusicPlayer('逆流成河');
 
 
-musicPlayer.on('play', function (track) {
+musicPlayer.on('play', function (track) { // 此处不能使用箭头函数
     console.log('songName: ', this.songName); //可以取到this中的成员变量
     console.log('track: ', track);
 });

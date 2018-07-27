@@ -24,5 +24,3 @@ let objSub = new Sub();
 objSub.showName(); // 子类中 name 会覆盖 父类中的 name
 //objSub.sayHello(); // 此行会报错，inherits 不会继承类方法
 console.log(objSub);
-
-//http://sentsin.com/web/179.htmls
